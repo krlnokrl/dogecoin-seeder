@@ -19,3 +19,9 @@ jobs:
   # build project
     - name: make
       run: make
+  # Create artifacts
+    - name: Upload binaries
+      uses: actions/upload-artifact@v2
+      with:
+        name: dnsseed
+        path: dnsseed
