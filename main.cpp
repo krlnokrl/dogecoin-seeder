@@ -31,7 +31,7 @@ public:
   CDnsSeedOpts() : nThreads(96), nDnsThreads(4), nPort(53), mbox(NULL), ns(NULL), host(NULL), tor(NULL), fUseTestNet(false), fWipeBan(false), fWipeIgnore(false) {}
 
   void ParseCommandLine(int argc, char **argv) {
-    static const char *help = "Dogecoin-seeder\n"
+    static const char *help = "Bunkercoin-seeder\n"
                               "Usage: %s -h <host> -n <ns> [-m <mbox>] [-t <threads>] [-p <port>]\n"
                               "\n"
                               "Options:\n"
@@ -343,7 +343,7 @@ extern "C" void* ThreadStats(void*) {
 }
 
 //TODO: We don't have any other seeds yet. Add them in next revision.
-static const string mainnet_seeds[] = {"seed.dogecoin.com", "seed.mophides.com", "seed.dglibrary.org", "seed.dogechain.info", ""};
+static const string mainnet_seeds[] = {"seed.bunkercoin.xyz", ""};
 static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
@@ -379,10 +379,10 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0xfc;
-      pchMessageStart[1] = 0xc1;
-      pchMessageStart[2] = 0xb7;
-      pchMessageStart[3] = 0xdc;
+      pchMessageStart[0] = 0xe8;
+      pchMessageStart[1] = 0xc9;
+      pchMessageStart[2] = 0xf0;
+      pchMessageStart[3] = 0xa1;
       seeds = testnet_seeds;
       fTestNet = true;
   }
