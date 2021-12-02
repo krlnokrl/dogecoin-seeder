@@ -13,8 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: configure
-      run: ./configure
+  # install dependencies
+    - name: boost
+      run: sudo apt-get update && sudo apt-get install -yq libboost1.65-dev
+  # build project
     - name: make
       run: make
     - name: make check
